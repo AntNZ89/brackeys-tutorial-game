@@ -4,16 +4,18 @@ using System;
 public partial class Coin : Area2D
 {
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		BodyEntered += OnBodyEntered;
+	}
+	
+	private void OnBodyEntered(Node2D body)
+    {
+		GD.Print("YAY you collected a coin");
+		QueueFree();
     }
 
-	private void OnBodyEntered(Node2D body)
-	{
-		GD.Print("+1 Coin!");
-		QueueFree();
-	}
+
 
 
 }
