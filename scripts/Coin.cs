@@ -10,7 +10,7 @@ public partial class Coin : Area2D
 	}
 	
 	private void OnBodyEntered(Node2D body)
-    {
+	{
 		GD.Print("YAY you collected a coin");
 		QueueFree();
     }

@@ -4,7 +4,14 @@ using System;
 public partial class player : CharacterBody2D
 {
 	public const float Speed = 100.0f;
-	public const float JumpVelocity = -200.0f;
+	public const float JumpVelocity = -300.0f;
+	private AnimatedSprite2D animatedSprite;
+
+    public override void _Ready()
+    {
+		animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+    }
+
 
 	public override void _PhysicsProcess(double delta){
 		Vector2 velocity = Velocity;
@@ -15,9 +22,19 @@ public partial class player : CharacterBody2D
 		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor()){
+		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		{
 			velocity.Y = JumpVelocity;
 		}
+
+		if (Input.IsActionJustPressed("ui_left"))
+		{
+			animatedSprite.FlipH = true;
+		}
+		else if (Input.IsActionJustPressed("ui_right"))
+        {
+			animatedSprite.FlipH = false;
+        }
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
