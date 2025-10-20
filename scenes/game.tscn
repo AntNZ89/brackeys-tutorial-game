@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d1wrqwtp0myqd"]
+[gd_scene load_steps=16 format=4 uid="uid://d1wrqwtp0myqd"]
 
 [ext_resource type="Texture2D" uid="uid://fedciyry3cg" path="res://assets/sprites/world_tileset.png" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dwpmx62axj0sw" path="res://scenes/character_body_2d.tscn" id="2_lnu2h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chegafcif4fos" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c480cu77lgnwk" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://d3lvnyglrmomq" path="res://scenes/slime.tscn" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://beci2gtr7o7y4" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("1_yqjtg")
@@ -367,6 +368,7 @@ process_callback = 0
 limit_bottom = 100
 limit_smoothed = true
 position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="Coins" type="Node" parent="."]
 
@@ -446,3 +448,32 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 
 [node name="Slime" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(121, -33)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -142.0
+offset_top = -28.0
+offset_right = -51.0
+offset_bottom = -17.0
+theme_override_colors/font_color = Color(1, 0.46600002, 0.110000014, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump."
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 105.0
+offset_top = -79.0
+offset_right = 191.0
+offset_bottom = -70.0
+theme_override_colors/font_color = Color(0.67316705, 0.7111836, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Slimes hurt..."
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 275.0
+offset_top = -78.0
+offset_right = 404.0
+offset_bottom = -68.0
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "And so does height..."

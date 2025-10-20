@@ -49,7 +49,7 @@ public partial class player : CharacterBody2D
 		{
 			animatedSprite.Play("run");
 		}
-		else if (direction.X == 0)
+		else
         {
 			animatedSprite.Play("idle");
         }
