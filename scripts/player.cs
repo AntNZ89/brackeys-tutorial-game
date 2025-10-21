@@ -5,12 +5,15 @@ public partial class player : CharacterBody2D
 {
 	public const float Speed = 100.0f;
 	public const float JumpVelocity = -300.0f;
+	private int health = 100;
 	private AnimatedSprite2D animatedSprite;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-    }
+	}
+	
+
 
 
 	public override void _PhysicsProcess(double delta){

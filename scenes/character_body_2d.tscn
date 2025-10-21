@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwpmx62axj0sw"]
+[gd_scene load_steps=28 format=3 uid="uid://dwpmx62axj0sw"]
 
 [ext_resource type="Script" uid="uid://cipqllw5b04s5" path="res://scripts/player.cs" id="1_g2brh"]
 [ext_resource type="Texture2D" uid="uid://dqp7sn0svdl78" path="res://assets/sprites/knight.png" id="1_lj8jo"]
+[ext_resource type="Script" uid="uid://dfckye68qces8" path="res://scripts/Area2d.cs" id="3_dn4c7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2brh"]
 atlas = ExtResource("1_lj8jo")
@@ -171,6 +172,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_t53lx"]
 radius = 5.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vejd"]
+radius = 8.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
@@ -184,3 +188,10 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_t53lx")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_dn4c7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_4vejd")

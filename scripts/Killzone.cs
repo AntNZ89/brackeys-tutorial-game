@@ -4,7 +4,9 @@ using System;
 
 public partial class Killzone : Area2D
 {
+    
     private Timer timer;
+    private int damage = 10;
     public override void _Ready()
     {
         timer = GetNode<Timer>("Timer");
@@ -17,8 +19,9 @@ public partial class Killzone : Area2D
         GD.Print("You died!");
         Engine.TimeScale = 0.3;
         timer.Start();
-        body.GetNode<CollisionShape2D>("CollisionShape2D").QueueFree();
+        body.GetNode<CollisionShape2D>("CollisionShape2D").QueueFree();            
     }
+    
 
     private void OnTimeout()
     {
@@ -26,7 +29,7 @@ public partial class Killzone : Area2D
         GetTree().ReloadCurrentScene();
     }
 
-
+    
 
 
 }
