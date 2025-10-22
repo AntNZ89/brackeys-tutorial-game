@@ -20,7 +20,5 @@ public partial class gamemanager : Node
 		Score.Text = "score: " + score;
     }
 
-
-
 	
 }
